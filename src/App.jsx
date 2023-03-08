@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import './index.css'
 import Boxes from "./components/Boxes.jsx"
 import Data from "./data"
 function App() {
@@ -31,10 +32,16 @@ const BoxesElements = squares.map(box => {
     handleClick = {handleClick}
   />)
 })
+const lightThat = document.getElementById("root")
+React.useEffect(
+  function(){
+    console.log("pleasedont")
+    lightThat.style.backgroundColor = lightMode? "grey": "#242424";
+  },[lightMode]
+)
 function lightOn(){
-  const root = document.getElementById('root')
+  
     setLightMode((oldMode)=>{
-      // root.style.backgroundColor = oldMode? "white":"gray"
       return !oldMode
     }
     )
@@ -43,9 +50,9 @@ function lightOn(){
   return (
     <div className="App">
       <div>
-            <div>
-        <label className="switch switch200" onClick={lightOn}>
-          <input type="checkbox"/>
+        <div >
+        <label className="switch switch200" >
+          <input type="checkbox" onClick={lightOn}/>
           <span className="slider slider200"></span>
         </label> 
       </div>

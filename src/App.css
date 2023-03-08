@@ -3,7 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
+  display: flex;
+  justify-content: center;
+  background-color: #242424;
+height: 33rem;
 }
 .App{
   display:flex;
